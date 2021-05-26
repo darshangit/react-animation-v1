@@ -48,14 +48,12 @@ class App extends Component {
                 height: 100,
                 margin: "auto",
                 transition: "opacity 1s ease-out",
-                opacity: state === "exiting" ? 0 : 1,
+                opacity: state === "exited" ? 0 : 1,
               }}
             ></div>
           )}
         </Transition>
-        {this.state.modalIsOpen ? (
-          <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
-        ) : null}
+        <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
         {this.state.modalIsOpen ? (
           <Backdrop show={this.state.modalIsOpen} closed={this.closeModal} />
         ) : null}
